@@ -6,7 +6,7 @@ let particleDistance = 50;
 let mouse = {
     x: undefined,
     y: undefined,
-    radius: 200,
+    radius: 100,
 };
 
 let lastMouseMoveTime = Date.now();
@@ -51,9 +51,9 @@ function drawLine() {
             let distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < particleDistance * 0) {
-                opacity = 1 - distance / (particleDistance * 0);
+                opacity = 0 - distance / (particleDistance * 0);
                 ctx.strokeStyle = "rgba(255,255,0," + opacity + ")";
-                ctx.lineWidth = 2;
+                ctx.lineWidth = 0;
                 ctx.beginPath();
                 ctx.moveTo(particles[a].x, particles[a].y);
                 ctx.lineTo(particles[b].x, particles[b].y);
