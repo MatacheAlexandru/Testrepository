@@ -2,16 +2,16 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
 let w, h, particles;
-let particleDistance = 40;
+let particleDistance = 50;
 let mouse = {
     x: undefined,
     y: undefined,
-    radius: 100,
+    radius: 200,
 };
 
 let lastMouseMoveTime = Date.now();
-const mouseStillDelay = 100;
-
+const mouseStillDelay =300;
+0
 function init() {
     resizeReset();
     animationLoop();
@@ -114,22 +114,22 @@ class Particle {
             } else {
                 if (this.x !== this.baseX) {
                     let dx = this.x - this.baseX;
-                    this.x -= dx / 30;
+                    this.x -= dx / 4;
                 }
                 if (this.y !== this.baseY) {
                     let dy = this.y - this.baseY;
-                    this.y -= dy / 30;
+                    this.y -= dy / 4;
                 }
             }
         } else {
             // Dacă mouse-ul este nemișcat, anulăm influența sa asupra particulei
             if (this.x !== this.baseX) {
                 let dx = this.x - this.baseX;
-                this.x -= dx / 30;
+                this.x -= dx / 15;
             }
             if (this.y !== this.baseY) {
                 let dy = this.y - this.baseY;
-                this.y -= dy / 30;
+                this.y -= dy / 15;
             }
         }
     }
