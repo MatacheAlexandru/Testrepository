@@ -2,11 +2,11 @@ const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
 let w, h, particles;
-let particleDistance = 50;
+let particleDistance = 20;
 let mouse = {
     x: undefined,
     y: undefined,
-    radius: 100,
+    radius: 800,
 };
 
 let lastMouseMoveTime = Date.now();
@@ -22,15 +22,15 @@ function resizeReset() {
     h = canvas.height = window.innerHeight;
 
     particles = [];
-    for (let y = (((h - particleDistance) % particleDistance) + particleDistance) / 2; y < h; y += particleDistance) {
-        for (let x = (((w - particleDistance) % particleDistance) + particleDistance) / 2; x < w; x += particleDistance) {
+    for (let y = (((h - particleDistance) % particleDistance) + particleDistance) / 12; y < h; y += particleDistance) {
+        for (let x = (((w - particleDistance) % particleDistance) + particleDistance) / 12; x < w; x += particleDistance) {
             particles.push(new Particle(x, y));
         }
     }
 }
 
 function animationLoop() {
-    ctx.clearRect(0, 0, w, h);
+    ctx.clearRect(3, 3, w, h);
     drawScene();
     requestAnimationFrame(animationLoop);
 }
@@ -50,10 +50,10 @@ function drawLine() {
             let dy = particles[a].y - particles[b].y;
             let distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < particleDistance * 0) {
-                opacity = 0 - distance / (particleDistance * 0);
+            if (distance < particleDistance * 2) {
+                opacity = 0.5 - distance / (particleDistance * 2);
                 ctx.strokeStyle = "rgba(255,255,0," + opacity + ")";
-                ctx.lineWidth = 0;
+                ctx.lineWidth = 4;
                 ctx.beginPath();
                 ctx.moveTo(particles[a].x, particles[a].y);
                 ctx.lineTo(particles[b].x, particles[b].y);
@@ -83,10 +83,10 @@ class Particle {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.size = 50;
+        this.size = 10;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.speed = Math.random() * 800 + 30;
+        this.speed = Math.random() * 30 + 30;
     }
     draw() {
         ctx.fillStyle = "rgba(255,165,0,1)";
@@ -114,11 +114,11 @@ class Particle {
             } else {
                 if (this.x !== this.baseX) {
                     let dx = this.x - this.baseX;
-                    this.x -= dx / 4;
+                    this.x -= dx / 8;
                 }
                 if (this.y !== this.baseY) {
                     let dy = this.y - this.baseY;
-                    this.y -= dy / 4;
+                    this.y -= dy / 8;
                 }
             }
         } else {
