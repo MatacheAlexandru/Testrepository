@@ -1,148 +1,90 @@
+canvas {
+  position: relative;
+  display: block;
+  background-color: #bbb2b2; /* gri deschis */
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
 
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex; /* Folosim flexbox pentru a alinia .fiel-front pe mijloc */
+  justify-content: center; /* Alinează pe orizontală pe mijloc */
+  align-items: center; /* Alinează pe verticală pe mijloc */
+}
 
-.container {
+.fiel-front {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.5);
+  width: 70%;
+  height: 100%;
+  z-index: 3;
+
+  @media screen and (max-width: 1600px) {
     width: 100%;
-    margin: 0 auto;
-    padding: 0 auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-}
-
-a {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    cursor: pointer;
+  }
 }
 
 .header {
-    position: fixed;
-        top: 0;
-        left: 0;
-        
-        
+  height: 100px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(59, 57, 57, 0.4) 10%,
+    rgba(59, 57, 57, 0.5) 50%,
+    rgba(59, 57, 57, 0.4) 90%,
+    transparent 100%
+  );
+  display: flex;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin: 0.5% 3% 0 0;
+
+  @media screen and (max-width: 600px) {
+    max-height: 60px;
+  }
 }
 
-.section1 {
-display: flex;
+.main {
+  display: flex;
 }
 
-.nav-menu {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(96, 236, 152, 0.5);
-    padding-right: 20px;
+.menu-profile {
 }
 
-.menu button,
-.favorite button,
-.shoping button,
-.search button,
-.acount button,
-.phone button,
-.email button,
-.logo button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    flex-direction: column;
+img {
+  margin-left: 15px;
+  border-radius: 20%;
+  max-width: 100%; /* Face ca imaginea să nu depășească lățimea containerului părinte */
+  height: auto;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-.menu svg {
-    height: 36px;
-    width: 54px;
+.content {
+  height: 2500px;
+  width: 100%;
+  min-width: 300px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(59, 57, 57, 0.4) 10%,
+    rgba(59, 57, 57, 0.5) 50%,
+    rgba(59, 57, 57, 0.4) 90%,
+    transparent 100%
+  );
+
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin: 3%;
 }
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    opacity: 5;
-    
-    transform: translateY(-13px);
-    
-    transition: opacity 2s ease, transform 2s ease ; 
-    /* Tranzitie pentru opacitate si transformare */
-}
-
-.dropdown-content.show {
-    display: block;
-    opacity: 50;
-    transform: translateY(9) ;
-    
-    
-}
-
-#menuIcon.rotate {
-    transform: rotate(360deg);
-    transition: transform 1.3s ease;
-}
-
-.favorite svg,
-.shoping svg,
-.search svg,
-.acount svg,
-.phone svg,
-.email svg {
-    height: 20px;
-    width: 38px;
-    
-}
-.favorite,
-.shoping,
-.search,
-.acount,
-.phone,
-.email {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
- .logo {
-    display: flex;
-    align-items: center;
-    background-color: rgba(96, 236, 152, 0.5);
-    
- }
-
- .section2 {
-    background-color: rgb(121, 13, 223, 0.5);
-    margin-top: 45px;
-    width: 100%;
-    height: 1000px; /* dupa ce se baga elemente in sectiune se aplica height:100%*/
- }
-
- .footer {
-     display: flex;
-     flex-direction: row-reverse;
- }
-
- .section3 {
-    background-color:rgba(96, 236, 152, 0.5);
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    justify-content: space-evenly;
- }
-
- 
