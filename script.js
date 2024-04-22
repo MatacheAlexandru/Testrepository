@@ -3,8 +3,21 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
 // Setăm dimensiunile canvas-ului pentru a se potrivi cu fereastra browser-ului
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+// Apelăm funcția pentru a seta dimensiunile canvas-ului inițial
+resizeCanvas();
+
+// Ascultăm evenimentul de redimensionare a ferestrei și actualizăm canvas-ul
+window.addEventListener("resize", function () {
+  resizeCanvas();
+  // Readaugăm cuvintele căzătoare când se redimensionează fereastra
+  fallingWords = [];
+  addFallingWords();
+});
 
 // Numărul de linii și cuvinte per linie
 var numLines = 12;
@@ -76,7 +89,10 @@ function addFallingWords() {
       Math.floor(
         Math.random() * (wordsPerLineRange[1] - wordsPerLineRange[0] + 2)
       ) + wordsPerLineRange[0];
-    var fontSize = Math.floor(Math.random() * 20) + 40; // Dimensiune aleatoare între 20 și 40
+    var fontSize =
+      window.innerWidth >= 500
+        ? (Math.floor(Math.random() * 10) + 40) * 2
+        : Math.floor(Math.random() * 10) + 40; // Dublăm dimensiunea fontului când lățimea ferestrei este mai mare sau egală cu 500px
 
     for (var wordIndex = 0; wordIndex < wordsPerLine; wordIndex++) {
       var x = Math.random() * canvas.width;
