@@ -23,9 +23,9 @@ html {
   height: 100%;
   z-index: 3;
 
-  @media screen and (max-width: 1600px) {
+  /* @media screen and (max-width: 1600px) {
     width: 100%;
-  }
+  } */
 }
 
 .header {
@@ -33,9 +33,9 @@ html {
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(59, 57, 57, 0.4) 10%,
-    rgba(59, 57, 57, 0.5) 50%,
-    rgba(59, 57, 57, 0.4) 90%,
+    rgba(165, 161, 161, 0.5) 40%,
+    rgb(185, 181, 181) 50%,
+    rgba(165, 161, 161, 0.9) 90%,
     transparent 100%
   );
   display: flex;
@@ -45,8 +45,8 @@ html {
   border-bottom-right-radius: 40px;
   margin: 0.5% 3% 0 0;
 
-  @media screen and (max-width: 600px) {
-    max-height: 60px;
+  @media screen and (max-width: 500px) {
+    max-height: 50px;
   }
 }
 
@@ -58,7 +58,9 @@ html {
 }
 
 img {
-  margin-left: 15px;
+  position: relative;
+  bottom: 80px;
+  margin-left: 30px;
   border-radius: 20%;
   max-width: 100%; /* Face ca imaginea să nu depășească lățimea containerului părinte */
   height: auto;
@@ -66,19 +68,21 @@ img {
   @media screen and (max-width: 1200px) {
     max-width: 100%;
     height: auto;
+    margin-left: 10px;
+    bottom: 50px;
   }
 }
 
 .content {
   height: 2500px;
   width: 100%;
-  min-width: 300px;
+  min-width: 200px;
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(59, 57, 57, 0.4) 10%,
-    rgba(59, 57, 57, 0.5) 50%,
-    rgba(59, 57, 57, 0.4) 90%,
+    rgba(165, 161, 161, 0.9) 10%,
+    rgb(185, 181, 181) 50%,
+    rgba(165, 161, 161, 0.9) 90%,
     transparent 100%
   );
 

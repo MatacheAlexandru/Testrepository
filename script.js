@@ -21,7 +21,7 @@ window.addEventListener("resize", function () {
 
 // Numărul de linii și cuvinte per linie
 var numLines = 12;
-var wordsPerLineRange = [2, 6];
+var wordsPerLineRange = [2, 2];
 
 // Lista cuvintelor pentru a fi afișate
 var words = [
@@ -91,13 +91,14 @@ function addFallingWords() {
       ) + wordsPerLineRange[0];
     var fontSize =
       window.innerWidth >= 500
-        ? (Math.floor(Math.random() * 10) + 40) * 2
-        : Math.floor(Math.random() * 10) + 40; // Dublăm dimensiunea fontului când lățimea ferestrei este mai mare sau egală cu 500px
+        ? (Math.floor(Math.random() * 10) + 60) * 2
+        : Math.floor(Math.random() * 10) + 20; // Dublăm dimensiunea fontului când lățimea ferestrei este mai mare sau egală cu 500px
+    var speed =
+      window.innerWidth >= 500 ? 1 + Math.random() * 2 : 1 + Math.random() * 0; // Reducem viteza pentru ecranele mai mici
 
     for (var wordIndex = 0; wordIndex < wordsPerLine; wordIndex++) {
       var x = Math.random() * canvas.width;
       var y = lineHeight * line;
-      var speed = 1 + Math.random() * 4; // Viteză între 1 și 3
       var word = randomWord();
       var fallingWord = new FallingWord(x, y, speed, fontSize, word);
       fallingWords.push(fallingWord);
