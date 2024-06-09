@@ -5,19 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Background</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <canvas id="canvas"></canvas>
-    <section class="fiel-front">
-      <div class="header"></div>
-      <div class="main">
-        <div class="menu-profile">
-          <img src="./images/profil cv.jpg" alt="Matache Alexandru Profile" />
+    <header>
+      <section>
+        <div class="name">
+          <h1>I'm Matache Alexandru</h1>
         </div>
-        <div class="content"></div>
-      </div>
-      <div class="footer"></div>
-    </section>
+      </section>
+    </header>
+    <main>
+      <section class="body-main">
+        <div>
+          <div class="image-cv">
+            <p class="desc">Front-end Developer</p>
+            <div class="background-container">
+              <div id="particles-js"></div>
+              <img
+                src="images/profil cv-depositphotos-bgremover.png"
+                alt="Imagine"
+                class="foreground-image"
+              />
+            </div>
+          </div>
+
+          <div class="contact">
+            <h3 class="underline">Contacts</h3>
+            <h2>Address:</h2>
+            <p>Popesti Leordeni, IF</p>
+            <h2>Phone:</h2>
+            <p>0772098607</p>
+            <h2>Email:</h2>
+            <p>
+              <a href="matache.alex.ncs@gmail.com"
+                >matache.alex.ncs@gmail.com</a
+              >
+            </p>
+            <h2>Linkedln:</h2>
+            <p>
+              <a href="https://www.linkedin.com/in/alexandru-matache-b608a3234/"
+                >https://www.linkedin.com/in/alexandru-matache-b608a3234/</a
+              >
+            </p>
+            <h3 class="underline">Languages</h3>
+            <h2>Romanian:</h2>
+            <p>Native</p>
+            <h2>English:</h2>
+            <p>B1</p>
+          </div>
+        </div>
+
+        <div class="information">
+          <div class="sumary">
+            <h3 class="title" onclick="toggleSection('section1')">
+              <svg class="arrow" width="34" height="34">
+                <use href="./svg/symbol-defs.svg#icon-arrow-down-circle"></use>
+              </svg>
+              Summary
+            </h3>
+            <div id="section1" class="content">
+              <p>
+                Software Tester – QA Field Engineer at Operative Finalized a
+                class in automation and manual testing at Azimut Vision School.
+                <br />
+                Well-versed in numerous programming languages including HTML5,
+                JavaScript, CSS, Jira, InteliJ IDEA, Visual studio code.
+                <br />10-year experience in managing, supporting and solving
+                clients' problems.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 class="title" onclick="toggleSection('section2')">
+              <svg class="arrow" width="34" height="34">
+                <use href="./svg/symbol-defs.svg#icon-arrow-down-circle"></use>
+              </svg>
+              Skill Highlights
+            </h3>
+            <div id="section2" class="content">
+              <p>
+                <span class="spaced"
+                  >• Good organizational skills – experienced</span
+                ><br />
+                <span class="spaced">• Communication – experienced</span><br />
+                <span class="spaced">• Complex problem solving – expert</span
+                ><br />
+                <span class="spaced">• Java – beginner</span><br />
+                <span class="spaced">• Manual testing – beginner</span><br />
+                <span class="spaced">• IntelliJ IDEA- beginner</span><br />
+                <span class="spaced">• Visual studio code - beginner</span>
+              </p>
+              <p>
+                <span class="spaced"
+                  >• Ability to work under pressure – experienced</span
+                ><br />
+                <span class="spaced">• Attention to detail – experienced</span
+                ><br />
+                <span class="spaced">• Functional testing – beginner</span
+                ><br />
+                <span class="spaced">• Automation testing – beginner</span
+                ><br />
+                <span class="spaced">• Jira-beginner</span><br />
+                <span class="spaced">• Service focused – expert</span><br />
+                <span class="spaced">• Innovative- expert</span><br />
+                <span class="spaced"
+                  >• General quick learning skills - expert</span
+                >
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 class="title" onclick="toggleSection('section3')">
+              <svg class="arrow" width="34" height="34">
+                <use href="./svg/symbol-defs.svg#icon-arrow-down-circle"></use>
+              </svg>
+              Work Experience
+            </h3>
+            <div id="section3" class="content">
+              <p>
+                IT technician at Next Com Solutions S.R.L. JANUARY 2013 –
+                PRESENT Consultancy, design, installation and configuration of
+                wired voice/data networks. Design, installation and
+                configuration of WLAN networks. Maintenance and technical
+                support for networks / IT infrastructures. Review requirements,
+                specifications documents to provide timely and meaningful
+                feedback. Estimate, prioritize, plan and coordinate activities
+                to meet client needs. Keep in touch with all the teams working
+                on the project to finish the projects in a timely manner and
+                without problems
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section>
+        <div></div>
+      </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="background.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
